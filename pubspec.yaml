@@ -1,0 +1,46 @@
+name: facebook_application
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.2.6 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_screenutil: ^5.9.3
+  intl: 0.19.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  assets:
+    - assets/icons/
+    - assets/images/Facebook-Avatar.jpg
+    - assets/images/Hello World.png
+    - assets/images/Bearface.png
+    - assets/images/John Xina.png
+    - assets/images/Romil Hemnani.png
+    - assets/images/Saturation.png
+    - assets/images/Suguru Geto.png
+    - assets/images/Unthinkable.png
+    - assets/images/JJK Trio.png
+    - assets/images/Pol Pot.png
+    - assets/images/Tiananmen Square.png
+    - assets/images/Sigma Cat.png
+    - assets/images/Chill Guy.png
+    - assets/images/AFK Journey.png
+    - assets/images/The Family.png
+    - assets/images/Red Guitar.png
+  fonts:
+    - family: Klavika
+      fonts:
+        - asset: assets\fonts\KlavikaBoldBold.otf
+    - family: Frutiger
+      fonts:
+        - asset: assets\fonts\FrutigerLTStd-Roman.otf
+  uses-material-design: true
