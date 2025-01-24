@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../widgets/constants.dart';
 import '../widgets/customfont.dart';
+import '../screens/detail_screen.dart';
+
 
 class Newsfeed extends StatelessWidget {
   final String userName;
   final String postContent;
-  final String? imageUrl;
-  final String? profileImage;
+  final String? imagePath;
+  final String? profileImagePath;
   final int likeCount;
   final bool isLiked;
   final int commentCount;
@@ -19,13 +21,14 @@ class Newsfeed extends StatelessWidget {
   final TextEditingController commentController;
   final Function(String) onCommentChanged;
   final List<Map<String, String>> commentsList;
+  
 
   const Newsfeed({
     super.key,
     required this.userName,
     required this.postContent,
-    this.imageUrl,
-    this.profileImage,
+    this.imagePath,
+    this.profileImagePath,
     required this.likeCount,
     required this.isLiked,
     required this.commentCount,
@@ -41,7 +44,25 @@ class Newsfeed extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => DetailScreen(
+              userName: userName,
+              postContent: postContent,
+              date: dateText,
+              numOfLikes: likeCount,
+              imagePath: imagePath ?? '',
+              profileImagePath: profileImagePath ?? '',
+              commentsList: commentsList,
+              initialLikes: likeCount,
+            ),
+          ),
+        );
+      },
+    child: Card(
       margin: EdgeInsets.all(ScreenUtil().setSp(10)),
       elevation: 3,
       child: Padding(
@@ -53,9 +74,9 @@ class Newsfeed extends StatelessWidget {
               children: [
                 CircleAvatar(
                   radius: ScreenUtil().setSp(20),
-                  backgroundImage: profileImage != null
+                  backgroundImage: profileImagePath != null
                       ? AssetImage(
-                          profileImage!) // Using AssetImage for profile
+                          profileImagePath!) // Using AssetImage for profile
                       : const AssetImage('assets/images/Suguru Geto.png'),
                 ),
                 SizedBox(width: ScreenUtil().setSp(10)),
@@ -86,11 +107,11 @@ class Newsfeed extends StatelessWidget {
               color: Colors.black,
             ),
             SizedBox(height: ScreenUtil().setSp(10)),
-            if (imageUrl != null)
+            if (imagePath != null)
               ClipRRect(
                 borderRadius: BorderRadius.circular(ScreenUtil().setSp(10)),
                 child: Image.asset(
-                  imageUrl!,
+                  imagePath!,
                   width: double.infinity,
                   fit: BoxFit.contain,
                 ),
@@ -282,6 +303,7 @@ class Newsfeed extends StatelessWidget {
           ],
         ),
       ),
+    ),
     );
   }
 }

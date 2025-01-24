@@ -8,7 +8,7 @@ class Postcard extends StatefulWidget {
   final String postId;
   final String userName;
   final String postContent;
-  final String? imageUrl;
+  final String? imagePath;
   final String? profileImage;
   final int initialLikeCount;
   final int commentCount;
@@ -26,7 +26,7 @@ class Postcard extends StatefulWidget {
     required this.postId,
     required this.userName,
     required this.postContent,
-    this.imageUrl,
+    this.imagePath,
     this.profileImage,
     required this.initialLikeCount,
     required this.commentCount,
@@ -147,11 +147,11 @@ class _PostcardState extends State<Postcard> {
             SizedBox(height: ScreenUtil().setSp(10)),
 
             // Image section (if available)
-            if (widget.imageUrl != null)
+            if (widget.imagePath != null)
               ClipRRect(
                 borderRadius: BorderRadius.circular(ScreenUtil().setSp(10)),
                 child: Image.asset(
-                  widget.imageUrl!,
+                  widget.imagePath!,
                   width: double.infinity,
                   fit: BoxFit.contain,
                 ),

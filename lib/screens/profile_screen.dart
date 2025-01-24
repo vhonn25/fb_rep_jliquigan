@@ -191,7 +191,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               userName: 'Vhon Liquigan',
                               postContent: 'First time playing AFK Journey',
                               profileImage: 'assets/images/Suguru Geto.png',
-                              imageUrl: 'assets/images/AFK Journey.png',
+                              imagePath: 'assets/images/AFK Journey.png',
                               dateText: '12m',
                               commentCount: 2,
                               shareCount: 5,
@@ -209,7 +209,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               userName: 'Vhon Liquigan',
                               postContent: 'I like yaa!',
                               profileImage: 'assets/images/Suguru Geto.png',
-                              imageUrl: 'assets/images/Red Guitar.png',
+                              imagePath: 'assets/images/Red Guitar.png',
                               dateText: '1h',
                               commentCount: 2,
                               shareCount: 3,
@@ -227,7 +227,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               userName: 'Vhon Liquigan',
                               postContent: 'I miss them already :(',
                               profileImage: 'assets/images/Suguru Geto.png',
-                              imageUrl: 'assets/images/The Family.png',
+                              imagePath: 'assets/images/The Family.png',
                               dateText: 'December 22 at 12:27 AM',
                               commentCount: 2,
                               shareCount: 1,
@@ -245,7 +245,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               userName: 'Vhon Liquigan',
                               postContent: 'ThE bEsT y3ar5 of OUR L1v3s',
                               profileImage: 'assets/images/Suguru Geto.png',
-                              imageUrl: null, // No image
+                              imagePath: null, // No image
                               dateText: 'December 7 at 3:26 PM',
                               commentCount: 0,
                               shareCount: 0,
@@ -264,7 +264,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               postContent:
                                   'Keep a gold chain on my neck, fly as a jet :o',
                               profileImage: 'assets/images/Suguru Geto.png',
-                              imageUrl: null, // No image
+                              imagePath: null, // No image
                               dateText: 'December 6 at 10:08 AM',
                               commentCount: 2,
                               shareCount: 3,
