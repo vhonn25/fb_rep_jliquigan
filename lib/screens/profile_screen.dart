@@ -8,14 +8,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProfileScreen extends StatefulWidget {
-  const ProfileScreen({super.key});
+  final String username;
+  const ProfileScreen({super.key, required this.username});
 
   @override
   State<ProfileScreen> createState() => _ProfileScreenState();
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
-  // This map will store the like count for each post
+  @override
+  void initState() {
+    super.initState();
+
+    // Debug: Print received username
+    print('ProfileScreen Username: ${widget.username}');
+  }
+
   Map<String, int> likeCounts = {
     'post1': 20,
     'post2': 6,
@@ -92,7 +100,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Customfont(
-                      text: 'Vhon Liquigan',
+                      text:  widget.username,
                       fontWeight: FontWeight.bold,
                       fontSize: ScreenUtil().setSp(20),
                       color: Colors.black,

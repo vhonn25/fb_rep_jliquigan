@@ -1,13 +1,15 @@
 import 'package:facebook_application/screens/notification_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../widgets/constants.dart';
 import '../screens/newsfeed_screen.dart';
 import '../widgets/customfont.dart';
 import 'package:facebook_application/screens/profile_screen.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+  final String username;
+  const HomeScreen({super.key, required this.username});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -16,19 +18,35 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
   final PageController _pageController = PageController();
+  String? _username;
+
+Future<void> _loadUsername() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      _username = prefs.getString('username');
+    });
+    print('Retrieved Username: $_username');
+  }
+
+@override
+  void initState() {
+    super.initState();
+    _username = widget.username;  // Set the username from the constructor
+    _loadUsername();  // Optional: Load persisted username if needed
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        shadowColor: FB_TEXT_COLOR_WHITE,
+        shadowColor: PURPLE_TEXT_COLOR_WHITE,
         elevation: 2,
         title: Customfont(
           text: _selectedIndex == 0
               ? 'Vhonship'
               : _selectedIndex == 1
                   ? 'Notifications'
-                  : 'Profile', // Update title for Profile screen
+                  : widget.username,
           fontSize: ScreenUtil().setSp(25),
           color: FB_PURPLE_PRIMARY,
           fontFamily: 'Klavika',
@@ -36,10 +54,10 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       body: PageView(
         controller: _pageController,
-        children: const <Widget>[
-          NewsfeedScreen(),
-          NotificationScreen(),
-          ProfileScreen(),
+        children: <Widget>[
+          const NewsfeedScreen(),
+          const NotificationScreen(),
+          ProfileScreen(username: widget.username),
         ],
         onPageChanged: (page) {
           setState(() {
