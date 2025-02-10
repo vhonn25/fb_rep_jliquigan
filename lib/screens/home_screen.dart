@@ -20,7 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
   final PageController _pageController = PageController();
   String? _username;
 
-Future<void> _loadUsername() async {
+  Future<void> _loadUsername() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     setState(() {
       _username = prefs.getString('username');
@@ -28,11 +28,11 @@ Future<void> _loadUsername() async {
     print('Retrieved Username: $_username');
   }
 
-@override
+  @override
   void initState() {
     super.initState();
-    _username = widget.username;  // Set the username from the constructor
-    _loadUsername();  // Optional: Load persisted username if needed
+    _username = widget.username; // Set the username from the constructor
+    _loadUsername(); // Optional: Load persisted username if needed
   }
 
   @override
@@ -75,7 +75,7 @@ Future<void> _loadUsername() async {
               icon: Icon(Icons.notifications), label: 'Notifications'),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
         ],
-        selectedItemColor: FB_PRIMARY,
+        selectedItemColor: FB_PURPLE_WHITE,
         currentIndex: _selectedIndex,
       ),
     );

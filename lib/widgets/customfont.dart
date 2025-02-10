@@ -36,7 +36,8 @@ class Customfont extends StatelessWidget {
           fontSize: fontSize,
           color: color,
           fontWeight: fontWeight,
-          letterSpacing: letterSpacing),
+          letterSpacing: letterSpacing,
+          )
     );
   }
 }

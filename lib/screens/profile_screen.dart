@@ -19,25 +19,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   void initState() {
     super.initState();
-
-    // Debug: Print received username
-    print('ProfileScreen Username: ${widget.username}');
-  }
-
-  Map<String, int> likeCounts = {
-    'post1': 20,
-    'post2': 6,
-    'post3': 11,
-    'post4': 8,
-    'post5': 13,
-  };
-
-  // This function will handle the like button press
-  void _onLikePressed(String postId) {
-    setState(() {
-      likeCounts[postId] =
-          (likeCounts[postId] ?? 0) + 1; // Increment like count
-    });
   }
 
   @override
@@ -193,12 +174,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            SizedBox(height: 20),
+                            const SizedBox(height: 20),
                             Postcard(
-                              postId: 'post1',
                               userName: 'Vhon Liquigan',
                               postContent: 'First time playing AFK Journey',
-                              profileImage: 'assets/images/Suguru Geto.png',
+                              profileImagePath: 'assets/images/Suguru Geto.png',
                               imagePath: 'assets/images/AFK Journey.png',
                               dateText: '12m',
                               commentCount: 2,
@@ -209,14 +189,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               onSharePressed: () {},
                               commentController: TextEditingController(),
                               onCommentChanged: (text) {},
-                              commentsList: [],
+                              commentsList: const [],
                             ),
-                            SizedBox(height: 20),
+                            const SizedBox(height: 20),
                             Postcard(
-                              postId: 'post2',
                               userName: 'Vhon Liquigan',
                               postContent: 'I like yaa!',
-                              profileImage: 'assets/images/Suguru Geto.png',
+                              profileImagePath: 'assets/images/Suguru Geto.png',
                               imagePath: 'assets/images/Red Guitar.png',
                               dateText: '1h',
                               commentCount: 2,
@@ -227,14 +206,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               onSharePressed: () {},
                               commentController: TextEditingController(),
                               onCommentChanged: (text) {},
-                              commentsList: [],
+                              commentsList: const [],
                             ),
-                            SizedBox(height: 20),
+                            const SizedBox(height: 20),
                             Postcard(
-                              postId: 'post3',
                               userName: 'Vhon Liquigan',
                               postContent: 'I miss them already :(',
-                              profileImage: 'assets/images/Suguru Geto.png',
+                              profileImagePath: 'assets/images/Suguru Geto.png',
                               imagePath: 'assets/images/The Family.png',
                               dateText: 'December 22 at 12:27 AM',
                               commentCount: 2,
@@ -245,15 +223,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               onSharePressed: () {},
                               commentController: TextEditingController(),
                               onCommentChanged: (text) {},
-                              commentsList: [],
+                              commentsList: const [],
                             ),
-                            SizedBox(height: 20),
+                            const SizedBox(height: 20),
                             Postcard(
-                              postId: 'post4',
                               userName: 'Vhon Liquigan',
                               postContent: 'ThE bEsT y3ar5 of OUR L1v3s',
-                              profileImage: 'assets/images/Suguru Geto.png',
-                              imagePath: null, // No image
+                              profileImagePath: 'assets/images/Suguru Geto.png',
+                              imagePath: '', // No image
                               dateText: 'December 7 at 3:26 PM',
                               commentCount: 0,
                               shareCount: 0,
@@ -263,16 +240,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               onSharePressed: () {},
                               commentController: TextEditingController(),
                               onCommentChanged: (text) {},
-                              commentsList: [],
+                              commentsList: const [],
                             ),
-                            SizedBox(height: 20),
+                            const SizedBox(height: 20),
                             Postcard(
-                              postId: 'post5',
                               userName: 'Vhon Liquigan',
                               postContent:
                                   'Keep a gold chain on my neck, fly as a jet :o',
-                              profileImage: 'assets/images/Suguru Geto.png',
-                              imagePath: null, // No image
+                              profileImagePath: 'assets/images/Suguru Geto.png',
+                              imagePath: '', // No image
                               dateText: 'December 6 at 10:08 AM',
                               commentCount: 2,
                               shareCount: 3,
@@ -282,14 +258,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               onSharePressed: () {},
                               commentController: TextEditingController(),
                               onCommentChanged: (text) {},
-                              commentsList: [],
+                              commentsList: const [],
                             ),
                           ],
                         ),
                       ),
                     ),
-                    profile_about(),
-                    profile_photos(),
+                    const profile_about(),
+                    const profile_photos(),
                   ],
                 ),
               )

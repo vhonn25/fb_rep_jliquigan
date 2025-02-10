@@ -27,6 +27,7 @@ class DetailScreen extends StatefulWidget {
   });
 
   @override
+  // ignore: library_private_types_in_public_api
   _DetailScreenState createState() => _DetailScreenState();
 }
 
@@ -102,7 +103,7 @@ class _DetailScreenState extends State<DetailScreen> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     (widget.profileImagePath.isEmpty)
-                        ? Icon(Icons.person)
+                        ? const Icon(Icons.person)
                         : CircleAvatar(
                             radius: ScreenUtil().setSp(25),
                             backgroundImage:
@@ -141,8 +142,8 @@ class _DetailScreenState extends State<DetailScreen> {
                         ),
                       ],
                     ),
-                    Spacer(),
-                    Icon(Icons.more_horiz),
+                    const Spacer(),
+                    const Icon(Icons.more_horiz),
                   ],
                 ),
               ),
@@ -162,7 +163,7 @@ class _DetailScreenState extends State<DetailScreen> {
               SizedBox(
                 height: ScreenUtil().setHeight(30),
               ),
-              Divider(),
+              const Divider(),
               Container(
                 padding:
                     EdgeInsets.symmetric(horizontal: ScreenUtil().setWidth(20)),
@@ -215,7 +216,7 @@ class _DetailScreenState extends State<DetailScreen> {
                         title: Text(comment["name"]!),
                         subtitle: Text(comment["text"]!),
                       );
-                    }).toList(),
+                    }),
                     Row(
                       children: [
                         Expanded(
