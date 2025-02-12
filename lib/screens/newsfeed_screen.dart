@@ -20,7 +20,7 @@ class _NewsfeedScreenState extends State<NewsfeedScreen> {
         'userName': 'John Xina',
         'dateText': 'August 6',
         'postContent': 'What a great EP!',
-        'profileImage': 'assets/images/John Xina.png',
+        'profileImageUrl': 'assets/images/John Xina.png',
         'imageUrl': 'assets/images/Hello World.png',
         'likes': 25,
         'comments': 10,
@@ -32,7 +32,7 @@ class _NewsfeedScreenState extends State<NewsfeedScreen> {
         'userName': 'Ciaran McDonald',
         'dateText': 'September 12',
         'postContent': 'Unthinkable 1st album. Out Now!',
-        'profileImage': 'assets/images/Bearface.png',
+        'profileImageUrl': 'assets/images/Bearface.png',
         'imageUrl': 'assets/images/Unthinkable.png',
         'likes': 50,
         'comments': 30,
@@ -44,7 +44,7 @@ class _NewsfeedScreenState extends State<NewsfeedScreen> {
         'userName': 'Romil Hemnani',
         'dateText': 'June 9',
         'postContent': 'Loving this new music!',
-        'profileImage': 'assets/images/Romil Hemnani.png',
+        'profileImageUrl': 'assets/images/Romil Hemnani.png',
         'imageUrl': 'assets/images/Saturation.png',
         'likes': 10,
         'comments': 5,
@@ -56,7 +56,7 @@ class _NewsfeedScreenState extends State<NewsfeedScreen> {
         'userName': 'Paul Potsky',
         'dateText': 'June 4',
         'postContent': 'Nothing happened in the Square :))',
-        'profileImage': 'assets/images/Pol Pot.png',
+        'profileImageUrl': 'assets/images/Pol Pot.png',
         'imageUrl': 'assets/images/Tiananmen Square.png',
         'likes': 66,
         'comments': 11,
@@ -68,7 +68,7 @@ class _NewsfeedScreenState extends State<NewsfeedScreen> {
         'userName': 'Catto da Sigma',
         'dateText': 'December 30',
         'postContent': 'I\'m just a chill guy fam!',
-        'profileImage': 'assets/images/Sigma Cat.png',
+        'profileImageUrl': 'assets/images/Sigma Cat.png',
         'imageUrl': 'assets/images/Chill Guy.png',
         'likes': 88,
         'comments': 4,
@@ -115,8 +115,8 @@ class _NewsfeedScreenState extends State<NewsfeedScreen> {
               userName: posts[postIndex]['userName'],
               dateText: posts[postIndex]['dateText'],
               postContent: posts[postIndex]['postContent'],
-              profileImagePath: posts[postIndex]['profileImage'],
-              imagePath: posts[postIndex]['imageUrl'],
+              profileImageUrl: posts[postIndex]['profileImageUrl'],
+              imageUrl: posts[postIndex]['imageUrl'],
               initialLikeCount: posts[postIndex]['likes'],
               commentCount: posts[postIndex]['comments'],
               shareCount: posts[postIndex]['shares'],
@@ -136,22 +136,34 @@ class _NewsfeedScreenState extends State<NewsfeedScreen> {
   List<Widget> carouselItems() {
     return [
       buildAdCard(
-        'Globe Telecom',
-        'https://companieslogo.com/img/orig/GTMEY-a1d3b2cf.png',
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMgAP5zhqrjyfCeqbN85EaP1qhXPNsf4p06Q&s',
-        'Limited Offer! LOAD NOW',
+        'Jollibee',
+        'assets/images/Jollibee.png',
+        'assets/images/Jollideals.png',
+        'Chicken Joy Price Drop! Save P36',
       ),
       buildAdCard(
-        'Shopee',
-        'https://play-lh.googleusercontent.com/Pc6SYb9QzXb-HV3ZBz1w67bX3_BFOUlTXlbhCK5fhOvOH8rAYZgvkGvxojKZuOubns8=w240-h480-rw',
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1Vwcok1zPJPrtcCfuV2Q9chuuW26ic1s2zg&s',
-        'Big Discounts Available! BUY NOW',
+        'PSBank',
+        'assets/images/PSBank.png',
+        'assets/images/PSBankAd.jpg',
+        'Get additional P10,000 discount for Honda cars!',
       ),
       buildAdCard(
-        'Samsung Philippines',
-        'https://blog.logomaster.ai/hs-fs/hubfs/samsung-logo-1993.jpg?width=672&height=454&name=samsung-logo-1993.jpg',
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXfDE9AtRbi_1i_ntV8etZ8NCP4BMq_M_e8w&s',
-        'Pre-order the new Samsung S23! ORDER NOW',
+        'Smart',
+        'assets/images/Smart.png',
+        'assets/images/SmartAd.png',
+        'Get it on Smart Prepaid or Postpaid',
+      ),
+      buildAdCard(
+        'Rolex',
+        'assets/images/Rolex.png',
+        'assets/images/RolexAd.png',
+        'The Date just 41',
+      ),
+      buildAdCard(
+        'Nike',
+        'assets/images/Nike.png',
+        'assets/images/NikeAd.png',
+        'Just Do It',
       ),
     ];
   }
@@ -176,7 +188,7 @@ class _NewsfeedScreenState extends State<NewsfeedScreen> {
             subtitle: const Text("Sponsored"),
           ),
  
-          // ✅ Use `Flexible` to prevent image from pushing down
+          // Use `Flexible` to prevent image from pushing down
           Flexible(
             child: CachedNetworkImage(
               imageUrl: imageUrl,
@@ -188,7 +200,7 @@ class _NewsfeedScreenState extends State<NewsfeedScreen> {
             ),
           ),
  
-          // ✅ Use Padding to give content a margin
+          // Use Padding to give content a margin
           Padding(
             padding: const EdgeInsets.all(10.0),
             child: Text(
@@ -197,7 +209,7 @@ class _NewsfeedScreenState extends State<NewsfeedScreen> {
             ),
           ),
  
-          // ✅ "More Details" Section with Button - Wrap in `SizedBox` to prevent overflow
+          // "More Details" Section with Button - Wrap in `SizedBox` to prevent overflow
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
             child: Row(
@@ -208,7 +220,7 @@ class _NewsfeedScreenState extends State<NewsfeedScreen> {
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
-                    color: Colors.red,
+                    color: Colors.black,
                   ),
                 ),
                 SizedBox(
@@ -228,8 +240,8 @@ class _NewsfeedScreenState extends State<NewsfeedScreen> {
                           postContent: "Placeholder Content",
                           date: "Date",
                           numOfLikes: 0,
-                          imagePath: imageUrl,
-                          profileImagePath: profileUrl,
+                          imageUrl: imageUrl,
+                          profileImageUrl: profileUrl,
                         ),
                       ),
                     ), height: 50, width: 50,

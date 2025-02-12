@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
 class CustomTextFormField extends StatefulWidget {
-  CustomTextFormField({
+  const CustomTextFormField({
     super.key,
     required this.validator,
     this.onSaved,

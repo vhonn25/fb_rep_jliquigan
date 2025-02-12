@@ -11,8 +11,8 @@ import 'package:cached_network_image/cached_network_image.dart';
 class Postcard extends StatefulWidget {
   final String userName;
   final String postContent;
-  final String? imagePath;
-  final String? profileImagePath;
+  final String imageUrl;
+  final String profileImageUrl;
   final int initialLikeCount;
   final int commentCount;
   final int shareCount;
@@ -31,8 +31,8 @@ class Postcard extends StatefulWidget {
     required this.userName,
     required this.postContent,
     required this.dateText,
-    this.imagePath,
-    this.profileImagePath,
+    this.imageUrl = '',
+    this.profileImageUrl = '',
     this.initialLikeCount = 0,
     this.commentCount = 0,
     this.shareCount = 0,
@@ -119,8 +119,8 @@ class _PostcardState extends State<Postcard> {
                 postContent: widget.postContent,
                 date: widget.dateText,
                 numOfLikes: likeCount,
-                imagePath: widget.imagePath ?? '',
-                profileImagePath: widget.profileImagePath ?? '',
+                imageUrl: widget.imageUrl,
+                profileImageUrl: widget.profileImageUrl,
                 commentsList: widget.commentsList ?? [],
                 initialLikes: likeCount,
               ),
@@ -138,18 +138,18 @@ class _PostcardState extends State<Postcard> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    (widget.profileImagePath == '')
-                        ? Icon(Icons.person)
+                    (widget.profileImageUrl == '')
+                        ? const Icon(Icons.person)
                         : ClipOval(
                             child: CachedNetworkImage(
                               fit: BoxFit.cover,
-                              width: 30,
-                              height: 30,
-                              imageUrl: widget.profileImagePath!,
+                              width: 50,
+                              height: 50,
+                              imageUrl: widget.profileImageUrl,
                               progressIndicatorBuilder:
                                   (context, url, downloadProgress) =>
                                       CircularProgressIndicator(
-                                color: FB_DARK_PRIMARY,
+                                color: FB_PURPLE_DARK,
                                 value: downloadProgress.progress,
                               ),
                               errorWidget: (context, url, error) => Icon(
@@ -190,14 +190,14 @@ class _PostcardState extends State<Postcard> {
                   color: Colors.black,
                 ),
                 SizedBox(height: ScreenUtil().setHeight(5)),
-                (widget.imagePath == '')
+                (widget.profileImageUrl == '')
                     ? SizedBox(
                         height: ScreenUtil().setHeight(0.1),
                       )
                     : Align(
                         alignment: Alignment.center,
                         child: CachedNetworkImage(
-                          imageUrl: widget.imagePath!,
+                          imageUrl: widget.imageUrl,
                           progressIndicatorBuilder:
                               (context, url, downloadProgress) =>
                                   CircularProgressIndicator(
@@ -315,7 +315,7 @@ class _PostcardState extends State<Postcard> {
                     CircleAvatar(
                       radius: ScreenUtil().setSp(15),
                       backgroundImage:
-                          const AssetImage('assets/images/Suguru Geto.png'),
+                          const NetworkImage('assets/images/Suguru Geto.png'),
                     ),
                     SizedBox(width: ScreenUtil().setSp(10)),
                     Expanded(
@@ -388,7 +388,7 @@ class _PostcardState extends State<Postcard> {
                           children: [
                             CircleAvatar(
                               radius: ScreenUtil().setSp(15),
-                              backgroundImage: const AssetImage(
+                              backgroundImage: const NetworkImage(
                                   'assets/images/Suguru Geto.png'),
                             ),
                             SizedBox(width: ScreenUtil().setSp(10)),
@@ -460,9 +460,8 @@ class _PostcardState extends State<Postcard> {
                                     postContent: widget.postContent,
                                     date: widget.dateText,
                                     numOfLikes: likeCount,
-                                    imagePath: widget.imagePath ?? '',
-                                    profileImagePath:
-                                        widget.profileImagePath ?? '',
+                                    imageUrl: widget.imageUrl,
+                                    profileImageUrl: widget.profileImageUrl,
                                     commentsList: widget.commentsList ?? [],
                                     initialLikes: likeCount,
                                   ),

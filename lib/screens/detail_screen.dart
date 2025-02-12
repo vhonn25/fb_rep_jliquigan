@@ -9,8 +9,8 @@ class DetailScreen extends StatefulWidget {
   final String postContent;
   final String date;
   int numOfLikes;
-  final String imagePath;
-  final String profileImagePath;
+  final String imageUrl;
+  final String profileImageUrl;
   final int initialLikes;
   final List<Map<String, String>> commentsList;
 
@@ -20,8 +20,8 @@ class DetailScreen extends StatefulWidget {
     required this.postContent,
     this.numOfLikes = 0,
     required this.date,
-    this.imagePath = '',
-    this.profileImagePath = '',
+    this.imageUrl = '',
+    this.profileImageUrl = '',
     this.initialLikes = 0,
     this.commentsList = const [],
   });
@@ -58,7 +58,7 @@ class _DetailScreenState extends State<DetailScreen> {
         comments.add({
           "name": "Vhon Liquigan", // Replace with dynamic user data
           "text": commentController.text.trim(),
-          "profileImage": "assets/images/Suguru Geto.png", // Example image path
+          "profileImageUrl": "assets/images/Suguru Geto.png", // Example image path
         });
         commentController.clear();
       });
@@ -88,11 +88,11 @@ class _DetailScreenState extends State<DetailScreen> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              (widget.imagePath == '')
+              (widget.imageUrl == '')
                   ? SizedBox(
                       height: ScreenUtil().setHeight(0),
                     )
-                  : Image.asset(widget.imagePath),
+                  : Image.asset(widget.imageUrl),
               SizedBox(
                 height: ScreenUtil().setHeight(20),
               ),
@@ -102,12 +102,12 @@ class _DetailScreenState extends State<DetailScreen> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    (widget.profileImagePath.isEmpty)
+                    (widget.profileImageUrl.isEmpty)
                         ? const Icon(Icons.person)
                         : CircleAvatar(
                             radius: ScreenUtil().setSp(25),
                             backgroundImage:
-                                AssetImage(widget.profileImagePath),
+                                AssetImage(widget.profileImageUrl),
                           ),
                     SizedBox(
                       width: ScreenUtil().setWidth(10),
@@ -211,7 +211,7 @@ class _DetailScreenState extends State<DetailScreen> {
                     ...comments.map((comment) {
                       return ListTile(
                         leading: CircleAvatar(
-                          backgroundImage: AssetImage(comment["profileImage"]!),
+                          backgroundImage: AssetImage(comment["profileImageUrl"]!),
                         ),
                         title: Text(comment["name"]!),
                         subtitle: Text(comment["text"]!),

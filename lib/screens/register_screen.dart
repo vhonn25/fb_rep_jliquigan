@@ -7,7 +7,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class RegisterScreen extends StatefulWidget {
-  const RegisterScreen({Key? key});
+  // ignore: avoid_types_as_parameter_names, non_constant_identifier_names
+  const RegisterScreen({super.key, Key});
 
   @override
   State<RegisterScreen> createState() => _RegisterScreenState();
@@ -56,11 +57,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
     await prefs.setString('password', passwordController.text);
 
     // Debug: Print stored credentials
-    print('Stored Username: ${usernameController.text}');
-    print('Stored Password: ${passwordController.text}');
+    ('Stored Username: ${usernameController.text}');
+    ('Stored Password: ${passwordController.text}');
 
     // Simulate successful registration
     showDialog(
+      // ignore: use_build_context_synchronously
       context: context,
       builder: (context) => AlertDialog(
         title: const Text("Success"),
@@ -192,7 +194,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   onTap: () => clearError("First Name"),
                 ),
                 if (firstNameError != null)
-                  Text(firstNameError!, style: TextStyle(color: Colors.red)),
+                  Text(firstNameError!, style: const TextStyle(color: Colors.red)),
 
                 SizedBox(height: ScreenUtil().setHeight(10)),
 
@@ -230,7 +232,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   onTap: () => clearError("Username"),
                 ),
                 if (usernameError != null)
-                  Text(usernameError!, style: TextStyle(color: Colors.red)),
+                  Text(usernameError!, style: const TextStyle(color: Colors.red)),
 
                 SizedBox(height: ScreenUtil().setHeight(10)),
                 

@@ -41,6 +41,16 @@ flutter:
     - assets/images/The Family.png
     - assets/images/Red Guitar.png
     - assets/images/Vhonster Logo.png
+    - assets/images/Jollibee.png
+    - assets/images/Jollideals.png
+    - assets/images/PSBank.png
+    - assets/images/PSBankAd.jpg
+    - assets/images/Smart.png
+    - assets/images/SmartAd.png
+    - assets/images/Rolex.png
+    - assets/images/RolexAd.png
+    - assets/images/Nike.png
+    - assets/images/NikeAd.png
   fonts:
     - family: Klavika
       fonts:

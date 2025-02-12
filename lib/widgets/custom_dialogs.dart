@@ -8,12 +8,12 @@ customDialog(BuildContext context, {required title, required content}) {
     content: Text(content),
     actions: <Widget>[
       ElevatedButton(
-        child: Text('Okay'),
         style: ElevatedButton.styleFrom(
           backgroundColor: FB_DARK_PRIMARY, foregroundColor: Colors.white),
         onPressed: () {
           Navigator.of(context).pop();
         },
+        child: Text('Okay'),
       ),
     ],
   );

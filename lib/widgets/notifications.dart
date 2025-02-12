@@ -10,10 +10,10 @@ class Notification extends StatelessWidget {
     required this.postContent,
     required this.description,
     this.icon = const Icon(Icons.person),
-    this.profileImagePath = '',
+    this.profileImageUrl = '',
     this.atProfile = false,
     required this.dateText,
-    this.imagePath = '',
+    this.imageUrl = '',
     required this.numOfLikes,
     required this.likeCount,
     required this.commentsList,
@@ -23,11 +23,11 @@ class Notification extends StatelessWidget {
   final String postContent;
   final String description;
   final Icon icon;
-  final String profileImagePath;
+  final String profileImageUrl;
   final String dateText;
   final int likeCount;
   final int numOfLikes;
-  final String imagePath;
+  final String imageUrl;
   final bool atProfile;
   final List<Map<String, String>> commentsList;
 
@@ -47,8 +47,8 @@ class Notification extends StatelessWidget {
                       postContent: postContent,
                       date: dateText,
                       numOfLikes: numOfLikes,
-                      imagePath: imagePath,
-                      profileImagePath: profileImagePath,
+                      imageUrl: imageUrl,
+                      profileImageUrl: profileImageUrl,
                       commentsList: commentsList,
                       initialLikes: likeCount,
                     ),
@@ -57,11 +57,11 @@ class Notification extends StatelessWidget {
         },
         child: Row(
           children: [
-            (profileImagePath == '')
+            (profileImageUrl == '')
                 ? icon
                 : CircleAvatar(
                     radius: ScreenUtil().setSp(15),
-                    backgroundImage: AssetImage(profileImagePath),
+                    backgroundImage: AssetImage(profileImageUrl),
                   ),
             SizedBox(
               width: ScreenUtil().setWidth(10),

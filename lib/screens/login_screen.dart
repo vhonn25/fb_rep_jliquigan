@@ -23,10 +23,10 @@ class _LogInScreenState extends State<LogInScreen> {
     String? storedUsername = prefs.getString('username');
     String? storedPassword = prefs.getString('password');
 
-    print('Stored Username: $storedUsername');
-    print('Stored Password: $storedPassword');
-    print('Entered Username: $username');
-    print('Entered Password: $password');
+    ('Stored Username: $storedUsername');
+    ('Stored Password: $storedPassword');
+    ('Entered Username: $username');
+    ('Entered Password: $password');
 
     // Check if the stored credentials match the entered ones
     return storedUsername?.trim() == username.trim() &&
@@ -38,7 +38,7 @@ class _LogInScreenState extends State<LogInScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
-        child: Container(
+        child: SizedBox(
           height: ScreenUtil().screenHeight,
           width: ScreenUtil().screenWidth,
           child: Form(
@@ -98,8 +98,9 @@ class _LogInScreenState extends State<LogInScreen> {
                                 enteredUsername, enteredPassword);
 
                             if (isValid) {
-                             print('Login Successful');
+                             ('Login Successful');
                               Navigator.pushReplacement(
+                                // ignore: use_build_context_synchronously
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) => HomeScreen(username: enteredUsername),
@@ -108,15 +109,16 @@ class _LogInScreenState extends State<LogInScreen> {
                             } else {
                               // Show error if credentials are invalid
                               showDialog(
+                                // ignore: use_build_context_synchronously
                                 context: context,
                                 builder: (context) => AlertDialog(
-                                  title: Text("Login Failed"),
+                                  title: const Text("Login Failed"),
                                   content:
-                                      Text("Invalid username or password."),
+                                      const Text("Invalid username or password."),
                                   actions: [
                                     TextButton(
                                       onPressed: () => Navigator.pop(context),
-                                      child: Text("OK"),
+                                      child: const Text("OK"),
                                     ),
                                   ],
                                 ),

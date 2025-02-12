@@ -25,7 +25,7 @@ class _HomeScreenState extends State<HomeScreen> {
     setState(() {
       _username = prefs.getString('username');
     });
-    print('Retrieved Username: $_username');
+    ('Retrieved Username: $_username');
   }
 
   @override
@@ -57,7 +57,7 @@ class _HomeScreenState extends State<HomeScreen> {
         children: <Widget>[
           const NewsfeedScreen(),
           const NotificationScreen(),
-          ProfileScreen(username: widget.username),
+          ProfileScreen(username: widget.username, profileImageUrl: '',),
         ],
         onPageChanged: (page) {
           setState(() {

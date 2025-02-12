@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:facebook_application/widgets/constants.dart';
 import 'package:facebook_application/widgets/custom_button.dart';
 import 'package:facebook_application/widgets/customfont.dart';
@@ -9,7 +10,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProfileScreen extends StatefulWidget {
   final String username;
-  const ProfileScreen({super.key, required this.username});
+  final String profileImageUrl;
+  const ProfileScreen({super.key, required this.username, required this.profileImageUrl,});
 
   @override
   State<ProfileScreen> createState() => _ProfileScreenState();
@@ -23,6 +25,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   @override
   Widget build(BuildContext context) {
+    const String profileImageUrl = 'assets/images/Suguru Geto.png';
     return DefaultTabController(
       length: 3,
       child: Container(
@@ -39,7 +42,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     decoration: BoxDecoration(
                       color: Colors.grey[300],
                       image: const DecorationImage(
-                        image: AssetImage('assets/images/JJK Trio.png'),
+                        image: CachedNetworkImageProvider('assets/images/JJK Trio.png'),
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -50,10 +53,17 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     child: Stack(
                       alignment: Alignment.center,
                       children: [
-                        const CircleAvatar(
-                          radius: 50,
-                          backgroundImage:
-                              AssetImage('assets/images/Suguru Geto.png'),
+                        CachedNetworkImage(
+                          imageUrl: profileImageUrl,
+                          imageBuilder: (context, imageProvider) =>
+                              CircleAvatar(
+                            radius: 50,
+                            backgroundImage: imageProvider,
+                          ),
+                          placeholder: (context, url) =>
+                              const CircularProgressIndicator(),
+                          errorWidget: (context, url, error) =>
+                              const Icon(Icons.error),
                         ),
                         Positioned(
                           bottom: 0,
@@ -178,8 +188,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             Postcard(
                               userName: 'Vhon Liquigan',
                               postContent: 'First time playing AFK Journey',
-                              profileImagePath: 'assets/images/Suguru Geto.png',
-                              imagePath: 'assets/images/AFK Journey.png',
+                              profileImageUrl: 'assets/images/Suguru Geto.png',
+                              imageUrl: 'assets/images/AFK Journey.png',
                               dateText: '12m',
                               commentCount: 2,
                               shareCount: 5,
@@ -195,8 +205,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             Postcard(
                               userName: 'Vhon Liquigan',
                               postContent: 'I like yaa!',
-                              profileImagePath: 'assets/images/Suguru Geto.png',
-                              imagePath: 'assets/images/Red Guitar.png',
+                              profileImageUrl: 'assets/images/Suguru Geto.png',
+                              imageUrl: 'assets/images/Red Guitar.png',
                               dateText: '1h',
                               commentCount: 2,
                               shareCount: 3,
@@ -212,8 +222,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             Postcard(
                               userName: 'Vhon Liquigan',
                               postContent: 'I miss them already :(',
-                              profileImagePath: 'assets/images/Suguru Geto.png',
-                              imagePath: 'assets/images/The Family.png',
+                              profileImageUrl: 'assets/images/Suguru Geto.png',
+                              imageUrl: 'assets/images/The Family.png',
                               dateText: 'December 22 at 12:27 AM',
                               commentCount: 2,
                               shareCount: 1,
@@ -229,8 +239,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             Postcard(
                               userName: 'Vhon Liquigan',
                               postContent: 'ThE bEsT y3ar5 of OUR L1v3s',
-                              profileImagePath: 'assets/images/Suguru Geto.png',
-                              imagePath: '', // No image
+                              profileImageUrl: 'assets/images/Suguru Geto.png',
+                              imageUrl: '', // No image
                               dateText: 'December 7 at 3:26 PM',
                               commentCount: 0,
                               shareCount: 0,
@@ -247,8 +257,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               userName: 'Vhon Liquigan',
                               postContent:
                                   'Keep a gold chain on my neck, fly as a jet :o',
-                              profileImagePath: 'assets/images/Suguru Geto.png',
-                              imagePath: '', // No image
+                              profileImageUrl: 'assets/images/Suguru Geto.png',
+                              imageUrl: '', // No image
                               dateText: 'December 6 at 10:08 AM',
                               commentCount: 2,
                               shareCount: 3,
