@@ -82,9 +82,9 @@ class _NewsfeedScreenState extends State<NewsfeedScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView.builder(
-        itemCount: posts.length + (posts.length ~/ 2),
+        itemCount: (posts.length >= 4) ? posts.length + 4 : posts.length * 2,
         itemBuilder: (context, index) {
-          if (index % 3 == 0 && index != 0) {
+          if (index % 2 == 1 && index < 8) {
             return Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -236,9 +236,9 @@ class _NewsfeedScreenState extends State<NewsfeedScreen> {
                       context,
                       MaterialPageRoute(
                         builder: (context) => DetailScreen(
-                          userName: "Placeholder Name",
-                          postContent: "Placeholder Content",
-                          date: "Date",
+                          userName: "FacebookAd",
+                          postContent: "Ad Content",
+                          date: "25/25/25",
                           numOfLikes: 0,
                           imageUrl: imageUrl,
                           profileImageUrl: profileUrl,
