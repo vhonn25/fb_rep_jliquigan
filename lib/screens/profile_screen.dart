@@ -148,7 +148,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
               SizedBox(height: ScreenUtil().setHeight(10)),
               TabBar(
-                indicatorColor: FB_DARK_PRIMARY,
+                indicatorColor: FB_PURPLE_DARK,
                 tabs: [
                   Tab(
                     child: Customfont(

@@ -4,7 +4,7 @@ class Customfont extends StatelessWidget {
   const Customfont(
       {super.key,
       required this.text,
-      required this.fontSize,
+      this.fontSize = 0.0,
       required this.color,
       this.fontFamily = 'Frutiger',
       this.fontWeight = FontWeight.normal,
@@ -19,11 +19,8 @@ class Customfont extends StatelessWidget {
   final TextAlign textAlign;
   final String fontFamily;
   final FontStyle fontStyle;
-
   static var titleStyle;
-
   static var subtitleStyle;
-
   static var bodyStyle;
 
   @override

@@ -1,22 +1,39 @@
 import 'package:facebook_application/screens/home_screen.dart';
 import 'package:facebook_application/widgets/constants.dart';
+import 'package:facebook_application/widgets/custom_dialogs.dart';
 import 'package:facebook_application/widgets/custom_textformfield.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:facebook_application/widgets/custom_inkwell_button.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class LogInScreen extends StatefulWidget {
-  const LogInScreen({super.key});
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
 
   @override
-  State<LogInScreen> createState() => _LogInScreenState();
+  State<LoginScreen> createState() => _LogInScreenState();
 }
 
-class _LogInScreenState extends State<LogInScreen> {
+class _LogInScreenState extends State<LoginScreen> {
   TextEditingController usernameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
+  
+  void login() {
+    if (usernameController.text == 'user' &&
+        passwordController.text == 'user') {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+            builder: (build) => HomeScreen(
+                  username: usernameController.text,
+                )),
+      );
+    } else {
+      customDialog(context,
+          title: 'Error', content: 'Username and password does not match');
+    }
+  }
 
   Future<bool> validateCredentials(String username, String password) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -32,7 +49,6 @@ class _LogInScreenState extends State<LogInScreen> {
     return storedUsername?.trim() == username.trim() &&
         storedPassword?.trim() == password.trim();
   }
-  
 
   @override
   Widget build(BuildContext context) {
@@ -98,12 +114,13 @@ class _LogInScreenState extends State<LogInScreen> {
                                 enteredUsername, enteredPassword);
 
                             if (isValid) {
-                             ('Login Successful');
+                              ('Login Successful');
                               Navigator.pushReplacement(
                                 // ignore: use_build_context_synchronously
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => HomeScreen(username: enteredUsername),
+                                  builder: (context) =>
+                                      HomeScreen(username: enteredUsername),
                                 ),
                               );
                             } else {
@@ -112,9 +129,9 @@ class _LogInScreenState extends State<LogInScreen> {
                                 // ignore: use_build_context_synchronously
                                 context: context,
                                 builder: (context) => AlertDialog(
-                                  title: const Text("Login Failed"),
-                                  content:
-                                      const Text("Invalid username or password."),
+                                  title: const Text("Error"),
+                                  content: const Text(
+                                      "Username and password does not match"),
                                   actions: [
                                     TextButton(
                                       onPressed: () => Navigator.pop(context),
