@@ -315,7 +315,7 @@ class _PostcardState extends State<Postcard> {
                     CircleAvatar(
                       radius: ScreenUtil().setSp(15),
                       backgroundImage:
-                          const NetworkImage('assets/images/Suguru Geto.png'),
+                          const AssetImage('assets/images/Suguru Geto.png'),
                     ),
                     SizedBox(width: ScreenUtil().setSp(10)),
                     Expanded(
@@ -388,7 +388,7 @@ class _PostcardState extends State<Postcard> {
                           children: [
                             CircleAvatar(
                               radius: ScreenUtil().setSp(15),
-                              backgroundImage: const NetworkImage(
+                              backgroundImage: const AssetImage(
                                   'assets/images/Suguru Geto.png'),
                             ),
                             SizedBox(width: ScreenUtil().setSp(10)),

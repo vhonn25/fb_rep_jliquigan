@@ -58,7 +58,8 @@ class _DetailScreenState extends State<DetailScreen> {
         comments.add({
           "name": "Vhon Liquigan", // Replace with dynamic user data
           "text": commentController.text.trim(),
-          "profileImageUrl": "assets/images/Suguru Geto.png", // Example image path
+          "profileImageUrl":
+              "assets/images/Suguru Geto.png", // Example image path
         });
         commentController.clear();
       });
@@ -106,8 +107,7 @@ class _DetailScreenState extends State<DetailScreen> {
                         ? const Icon(Icons.person)
                         : CircleAvatar(
                             radius: ScreenUtil().setSp(25),
-                            backgroundImage:
-                                AssetImage(widget.profileImageUrl),
+                            backgroundImage: AssetImage(widget.profileImageUrl),
                           ),
                     SizedBox(
                       width: ScreenUtil().setWidth(10),
@@ -211,7 +211,8 @@ class _DetailScreenState extends State<DetailScreen> {
                     ...comments.map((comment) {
                       return ListTile(
                         leading: CircleAvatar(
-                          backgroundImage: AssetImage(comment["profileImageUrl"]!),
+                          backgroundImage:
+                              AssetImage(comment["profileImageUrl"]!),
                         ),
                         title: Text(comment["name"]!),
                         subtitle: Text(comment["text"]!),
@@ -243,5 +244,3 @@ class _DetailScreenState extends State<DetailScreen> {
     );
   }
 }
-
-

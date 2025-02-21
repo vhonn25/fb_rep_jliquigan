@@ -18,7 +18,7 @@ class _LogInScreenState extends State<LoginScreen> {
   TextEditingController usernameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
-  
+
   void login() {
     if (usernameController.text == 'user' &&
         passwordController.text == 'user') {
