@@ -51,8 +51,8 @@ customShowImageDialog(BuildContext context, {required String imageUrl}) {
                             errorWidget: (context, url, error) =>
                                 const Icon(Icons.error),
                           )
-                        : Image.asset(
-                            imageUrl, // Assuming imageUrl is the asset path here.
+                        : Image.network(
+                            imageUrl,
                             width: 300.w,
                             height: 300.h,
                           ),

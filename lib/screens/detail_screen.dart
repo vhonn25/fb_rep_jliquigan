@@ -1,7 +1,11 @@
+// Suggested code may be subject to a license. Learn more: ~LicenseLog:3189188683.
+// Suggested code may be subject to a license. Learn more: ~LicenseLog:1206040562.
+// Suggested code may be subject to a license. Learn more: ~LicenseLog:2843404961.
 import 'package:facebook_application/widgets/constants.dart';
 import 'package:facebook_application/widgets/customfont.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 // ignore: must_be_immutable
 class DetailScreen extends StatefulWidget {
@@ -93,7 +97,19 @@ class _DetailScreenState extends State<DetailScreen> {
                   ? SizedBox(
                       height: ScreenUtil().setHeight(0),
                     )
-                  : Image.asset(widget.imageUrl),
+                  : CachedNetworkImage(
+                      imageUrl: widget.imageUrl,
+                      progressIndicatorBuilder:
+                          (context, url, downloadProgress) =>
+                              CircularProgressIndicator(
+                        color: FB_PURPLE_DARK,
+                        value: downloadProgress.progress,
+                      ),
+                      errorWidget: (context, url, error) => Icon(
+                        Icons.error,
+                        size: 100.sp,
+                      ),
+                    ),
               SizedBox(
                 height: ScreenUtil().setHeight(20),
               ),
@@ -107,7 +123,8 @@ class _DetailScreenState extends State<DetailScreen> {
                         ? const Icon(Icons.person)
                         : CircleAvatar(
                             radius: ScreenUtil().setSp(25),
-                            backgroundImage: AssetImage(widget.profileImageUrl),
+                            backgroundImage:
+                                NetworkImage(widget.profileImageUrl),
                           ),
                     SizedBox(
                       width: ScreenUtil().setWidth(10),

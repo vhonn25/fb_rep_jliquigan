@@ -61,7 +61,7 @@ class Notification extends StatelessWidget {
                 ? icon
                 : CircleAvatar(
                     radius: ScreenUtil().setSp(15),
-                    backgroundImage: AssetImage(profileImageUrl),
+                    backgroundImage: NetworkImage(profileImageUrl),
                   ),
             SizedBox(
               width: ScreenUtil().setWidth(10),

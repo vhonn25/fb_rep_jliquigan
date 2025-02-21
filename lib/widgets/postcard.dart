@@ -143,8 +143,8 @@ class _PostcardState extends State<Postcard> {
                         : ClipOval(
                             child: CachedNetworkImage(
                               fit: BoxFit.cover,
-                              width: 50,
-                              height: 50,
+                              width: 35,
+                              height: 35,
                               imageUrl: widget.profileImageUrl,
                               progressIndicatorBuilder:
                                   (context, url, downloadProgress) =>
@@ -315,7 +315,7 @@ class _PostcardState extends State<Postcard> {
                     CircleAvatar(
                       radius: ScreenUtil().setSp(15),
                       backgroundImage:
-                          const AssetImage('assets/images/Suguru Geto.png'),
+                          const NetworkImage('https://gdm-assets.b-cdn.net/images/ncavvykf/epicstream/c1e0142f06accc89f5ccdba411b09401a95f0cde-1280x720.jpg?rect=0,26,1280,669&w=398&h=208&auto=format'),
                     ),
                     SizedBox(width: ScreenUtil().setSp(10)),
                     Expanded(
@@ -388,7 +388,7 @@ class _PostcardState extends State<Postcard> {
                           children: [
                             CircleAvatar(
                               radius: ScreenUtil().setSp(15),
-                              backgroundImage: const AssetImage(
+                              backgroundImage: const NetworkImage(
                                   'assets/images/Suguru Geto.png'),
                             ),
                             SizedBox(width: ScreenUtil().setSp(10)),

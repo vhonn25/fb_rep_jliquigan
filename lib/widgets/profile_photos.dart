@@ -20,64 +20,64 @@ class profile_photos extends StatelessWidget {
             padding: const EdgeInsets.all(0),
             child: InkWell(
               onTap: () => customShowImageDialog(context,
-                  imageUrl: 'assets/images/Red Guitar.png'),
-              child: Image.asset('assets/images/Red Guitar.png',
+                  imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBvkXMVIMKaf3zr2Og37J5xymgYQYc9fbIyZylIc7QTBiDVuMU'),
+              child: Image.network('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBvkXMVIMKaf3zr2Og37J5xymgYQYc9fbIyZylIc7QTBiDVuMU',
                   fit: BoxFit.cover),
             )),
         Container(
             padding: const EdgeInsets.all(0),
             child: InkWell(
               onTap: () => customShowImageDialog(context,
-                  imageUrl: 'assets/images/Jollideals.png'),
-              child: Image.asset('assets/images/Jollideals.png',
+                  imageUrl: 'https://queen.jollibee.com.ph/2023/05/2-pc.-Chickenjoy-VM-Promo-min-819x1024.jpg'),
+              child: Image.network('https://queen.jollibee.com.ph/2023/05/2-pc.-Chickenjoy-VM-Promo-min-819x1024.jpg',
                   fit: BoxFit.cover),
             )),
         Container(
             padding: const EdgeInsets.all(0),
             child: InkWell(
               onTap: () => customShowImageDialog(context,
-                  imageUrl: 'assets/images/Sigma Cat.png'),
+                  imageUrl: 'https://i1.sndcdn.com/artworks-bAq8V5mdeNgSfzW6-qSp9OA-t500x500.png'),
               child:
-                  Image.asset('assets/images/Sigma Cat.png', fit: BoxFit.cover),
+                  Image.network('https://i1.sndcdn.com/artworks-bAq8V5mdeNgSfzW6-qSp9OA-t500x500.png', fit: BoxFit.cover),
             )),
         Container(
             padding: const EdgeInsets.all(0),
             child: InkWell(
               onTap: () => customShowImageDialog(context,
-                  imageUrl: 'assets/images/Tiananmen Square.png'),
-              child: Image.asset('assets/images/Tiananmen Square.png',
+                  imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Tian%27anmen_from_the_square_%2820200825114150%29.jpg/1200px-Tian%27anmen_from_the_square_%2820200825114150%29.jpg'),
+              child: Image.network('https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Tian%27anmen_from_the_square_%2820200825114150%29.jpg/1200px-Tian%27anmen_from_the_square_%2820200825114150%29.jpg',
                   fit: BoxFit.cover),
             )),
         Container(
             padding: const EdgeInsets.all(0),
             child: InkWell(
               onTap: () => customShowImageDialog(context,
-                  imageUrl: 'assets/images/Saturation.png'),
-              child: Image.asset('assets/images/Saturation.png',
+                  imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVOrp6ikZhFtAZKCPAVpPPuucIh_s4TcXIYA&s'),
+              child: Image.network('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVOrp6ikZhFtAZKCPAVpPPuucIh_s4TcXIYA&s',
                   fit: BoxFit.cover),
             )),
         Container(
             padding: const EdgeInsets.all(0),
             child: InkWell(
               onTap: () => customShowImageDialog(context,
-                  imageUrl: 'assets/images/Hello World.png'),
-              child: Image.asset('assets/images/Hello World.png',
+                  imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOhrrmVNtCZiao_sr1dOeVDAE4YeXe1ddqMw&s'),
+              child: Image.network('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOhrrmVNtCZiao_sr1dOeVDAE4YeXe1ddqMw&s',
                   fit: BoxFit.cover),
             )),
         Container(
             padding: const EdgeInsets.all(0),
             child: InkWell(
               onTap: () => customShowImageDialog(context,
-                  imageUrl: 'assets/images/Hello World.png'),
-              child: Image.asset('assets/images/Hello World.png',
+                  imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOhrrmVNtCZiao_sr1dOeVDAE4YeXe1ddqMw&s'),
+              child: Image.network('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOhrrmVNtCZiao_sr1dOeVDAE4YeXe1ddqMw&s',
                   fit: BoxFit.cover),
             )),
         Container(
             padding: const EdgeInsets.all(0),
             child: InkWell(
               onTap: () => customShowImageDialog(context,
-                  imageUrl: 'assets/images/Hello World.png'),
-              child: Image.asset('assets/images/Hello World.png',
+                  imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOhrrmVNtCZiao_sr1dOeVDAE4YeXe1ddqMw&s'),
+              child: Image.network('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOhrrmVNtCZiao_sr1dOeVDAE4YeXe1ddqMw&s',
                   fit: BoxFit.cover),
             )),
       ],

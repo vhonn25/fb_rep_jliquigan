@@ -25,7 +25,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   @override
   Widget build(BuildContext context) {
-    const String profileImageUrl = 'assets/images/Suguru Geto.png';
+    const String profileImageUrl = 'https://gdm-assets.b-cdn.net/images/ncavvykf/epicstream/c1e0142f06accc89f5ccdba411b09401a95f0cde-1280x720.jpg?rect=0,26,1280,669&w=398&h=208&auto=format';
     return DefaultTabController(
       length: 3,
       child: Container(
@@ -42,7 +42,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     decoration: BoxDecoration(
                       color: Colors.grey[300],
                       image: const DecorationImage(
-                        image: CachedNetworkImageProvider('assets/images/JJK Trio.png'),
+                        image: CachedNetworkImageProvider('https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQyhahkcNF9i-UtMAOBryg2Ao6f2NJ2JIHtv64I9VC4mjagj7mr'),
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -57,7 +57,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           imageUrl: profileImageUrl,
                           imageBuilder: (context, imageProvider) =>
                               CircleAvatar(
-                            radius: 50,
+                            radius: 40,
                             backgroundImage: imageProvider,
                           ),
                           placeholder: (context, url) =>
@@ -188,8 +188,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             Postcard(
                               userName: 'Vhon Liquigan',
                               postContent: 'First time playing AFK Journey',
-                              profileImageUrl: 'assets/images/Suguru Geto.png',
-                              imageUrl: 'assets/images/AFK Journey.png',
+                              profileImageUrl: 'https://gdm-assets.b-cdn.net/images/ncavvykf/epicstream/c1e0142f06accc89f5ccdba411b09401a95f0cde-1280x720.jpg?rect=0,26,1280,669&w=398&h=208&auto=format',
+                              imageUrl: 'https://s2.mmommorpg.com/media/sshots/scaled/afk-journey-preview2.jpg.1156x640_q70_crop-smart.jpg',
                               dateText: '12m',
                               commentCount: 2,
                               shareCount: 5,
@@ -205,8 +205,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             Postcard(
                               userName: 'Vhon Liquigan',
                               postContent: 'I like yaa!',
-                              profileImageUrl: 'assets/images/Suguru Geto.png',
-                              imageUrl: 'assets/images/Red Guitar.png',
+                              profileImageUrl: 'https://gdm-assets.b-cdn.net/images/ncavvykf/epicstream/c1e0142f06accc89f5ccdba411b09401a95f0cde-1280x720.jpg?rect=0,26,1280,669&w=398&h=208&auto=format',
+                              imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBvkXMVIMKaf3zr2Og37J5xymgYQYc9fbIyZylIc7QTBiDVuMU',
                               dateText: '1h',
                               commentCount: 2,
                               shareCount: 3,
@@ -222,8 +222,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             Postcard(
                               userName: 'Vhon Liquigan',
                               postContent: 'I miss them already :(',
-                              profileImageUrl: 'assets/images/Suguru Geto.png',
-                              imageUrl: 'assets/images/The Family.png',
+                              profileImageUrl: 'https://gdm-assets.b-cdn.net/images/ncavvykf/epicstream/c1e0142f06accc89f5ccdba411b09401a95f0cde-1280x720.jpg?rect=0,26,1280,669&w=398&h=208&auto=format',
+                              imageUrl: 'https://media.pitchfork.com/photos/635bd5c994075a586409fc23/master/w_1280%2Cc_limit/Brockhampton-The-Family.jpg',
                               dateText: 'December 22 at 12:27 AM',
                               commentCount: 2,
                               shareCount: 1,
@@ -239,7 +239,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             Postcard(
                               userName: 'Vhon Liquigan',
                               postContent: 'ThE bEsT y3ar5 of OUR L1v3s',
-                              profileImageUrl: 'assets/images/Suguru Geto.png',
+                              profileImageUrl: 'https://gdm-assets.b-cdn.net/images/ncavvykf/epicstream/c1e0142f06accc89f5ccdba411b09401a95f0cde-1280x720.jpg?rect=0,26,1280,669&w=398&h=208&auto=format',
                               imageUrl: '', // No image
                               dateText: 'December 7 at 3:26 PM',
                               commentCount: 0,
@@ -255,9 +255,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             const SizedBox(height: 20),
                             Postcard(
                               userName: 'Vhon Liquigan',
-                              postContent:
-                                  'Keep a gold chain on my neck, fly as a jet :o',
-                              profileImageUrl: 'assets/images/Suguru Geto.png',
+                              postContent:'Keep a gold chain on my neck, fly as a jet :o',
+                              profileImageUrl: 'https://gdm-assets.b-cdn.net/images/ncavvykf/epicstream/c1e0142f06accc89f5ccdba411b09401a95f0cde-1280x720.jpg?rect=0,26,1280,669&w=398&h=208&auto=format',
                               imageUrl: '', // No image
                               dateText: 'December 6 at 10:08 AM',
                               commentCount: 2,
