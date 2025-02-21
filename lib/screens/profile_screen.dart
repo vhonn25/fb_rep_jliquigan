@@ -181,7 +181,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
               SizedBox(
                 // Post Section
-                height: ScreenUtil().setHeight(2000),
+                height: ScreenUtil().setHeight(3500),
                 child: TabBarView(
                   children: [
                     Container(
@@ -255,6 +255,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 postContent: 'ThE bEsT y3ar5 of OUR L1v3s',
                                 profileImageUrl:
                                     'https://gdm-assets.b-cdn.net/images/ncavvykf/epicstream/c1e0142f06accc89f5ccdba411b09401a95f0cde-1280x720.jpg?rect=0,26,1280,669&w=398&h=208&auto=format',
+                                imageUrl: "",
                                 dateText: 'December 7 at 3:26 PM',
                                 commentCount: 0,
                                 shareCount: 0,
