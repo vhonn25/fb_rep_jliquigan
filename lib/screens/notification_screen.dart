@@ -35,7 +35,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
                 userName: 'Ciaran McDonald',
                 postContent: 'Unthinkable 1st album. Out Now!',
                 description: 'Unthinkable',
-                profileImageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOhrrmVNtCZiao_sr1dOeVDAE4YeXe1ddqMw&s',
+                profileImageUrl: 'https://pbs.twimg.com/media/ELJt5NKXYAAkxJY.jpg',
                 imageUrl: 'https://i1.sndcdn.com/artworks-000503802078-irjr2e-t500x500.jpg',
                 dateText: 'September 12',
                 numOfLikes: 50,
